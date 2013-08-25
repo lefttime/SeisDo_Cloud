@@ -1,0 +1,18 @@
+{{define "content"}}
+<center>
+	<form enctype='multipart/form-data' action='http://localhost:8080' method='POST'>
+		<input type='file' name='uploadfile' />
+		<input type='submit' value='上传文件' />
+	</form>
+</center>
+
+<h2>基本信息</h2>
+<ul>
+	<li>文件大小：{{.FileSize}}</li>
+	<li>采样率：{{.SampleRate}}</li>
+	<li>道  长：{{.TraceLength}}</li>
+	<li>格式码：{{.FormatCode}}</li>
+	<li>总道数：{{.TotalTraces}}</li>
+</ul>
+<input type="hidden" name="token" value="{{.}}" />
+{{end}}
